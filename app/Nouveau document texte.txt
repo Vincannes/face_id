@@ -1,0 +1,20 @@
+Ajout nouveau user:
+- ouvrir fenetre
+- des que reussi a avoir le visage signaler avec un check
+- ajouter dans deux listes : known_faces = encoding "face_encodings"
+			   				& known_names = nom de la personne
+- sauvegarder nouveau user quelque part (trouver un moyen)
+- sauvegarder dans YML array face + ID 
+- creer database .db avec ID generer dans ke YML et nom personne
+
+Reconnaitre User:
+- ouvrir fenetre
+- encoding image : face_recognition.face_encodings
+- convertir image webcam en Gris : cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+- comparer nouvelle image encode avec list des images dans le DB : 
+	face_recognition.compare_faces(known_faces, face_encoding, Tolerance 0.6) 
+        = avec Tolerance 0.6
+- Si result == True ou result < 0.6 => MATCH
+- recuperer index result (results.index(True)) pour avoir index list user
+- rechercehr dans la database le nom du User grace a l id
+- dessiner rectange avec nom user depuis known_names[results.index(True)]
