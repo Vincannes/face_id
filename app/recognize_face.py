@@ -41,8 +41,8 @@ while True:
             stroke = 2
             for user in datas:
                 if id_ == user['id']:
-                    cv2.putText(frame, user['name'], (x + width, y), font, 1, color, stroke, cv2.LINE_AA)
-                    cv2.putText(frame, user['surname'], (x + width, y-30), font, 1, color, stroke, cv2.LINE_AA)
+                    cv2.putText(frame, str(user['id']), (x + width, y), font, 1, color, stroke, cv2.LINE_AA)
+                    cv2.putText(frame, user['name'], (x + width, y-30), font, 1, color, stroke, cv2.LINE_AA)
 
         cv2.rectangle(frame, (x, y), (x + width, y + height), (0, 255, 0), 3)  # Dessin d'un rectangle
 

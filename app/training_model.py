@@ -33,7 +33,7 @@ def run():
     print("\n [INFO] Training faces. It will take a few seconds. Wait ...")
     faces, ids = get_images_labels(imgs_path)
     recognizer.train(faces, np.array(ids))
-
+    print(faces, ids)
     # Save the model into trainer/trainer.yml
     recognizer.write(os.path.join(xml_path, 'trainner.yml'))
 
